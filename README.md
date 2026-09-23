@@ -6,6 +6,12 @@ que qualquer jogo ou simulador enxerga como um joystick comum.
 Funciona com o radio **sozinho** — nao precisa da aeronave, nem de hardware
 extra, nem de root.
 
+> [!NOTE]
+> Projeto de hobby, feito por diversao e em grande parte *vibe-coded* — escrito
+> com apoio pesado de LLM, iterando ate funcionar no meu radio. Funciona, mas
+> nao foi revisado linha a linha nem testado em outros aparelhos. Use como
+> ponto de partida, nao como referencia.
+
 ## Instalacao
 
 ```bash
