@@ -1,0 +1,4 @@
+pyserial>=3.5
+evdev>=1.6
+# opcional: so para rawusb.py, a ferramenta de diagnostico USB de baixo nivel
+pyusb>=1.2

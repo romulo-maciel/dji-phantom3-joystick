@@ -1,0 +1,93 @@
+{
+  "_comentario": "Mapa do radio DJI Phantom 3 Standard. offset = posicao do u16 no pacote de 58 bytes. inverter = troca o sentido do eixo. min/centro/max sao contagens cruas do radio.",
+  "porta": "/dev/ttyACM0",
+  "zona_morta": 0.02,
+  "eixos": {
+    "ABS_X": {
+      "rotulo": "yaw (stick esquerdo, horizontal)",
+      "offset": 22,
+      "min": 330,
+      "centro": 2152,
+      "max": 3897,
+      "inverter": true
+    },
+    "ABS_Y": {
+      "rotulo": "throttle (stick esquerdo, vertical)",
+      "offset": 20,
+      "min": 296,
+      "centro": 2144,
+      "max": 3963,
+      "inverter": true
+    },
+    "ABS_RX": {
+      "rotulo": "roll (stick direito, horizontal)",
+      "offset": 16,
+      "min": 242,
+      "centro": 2133,
+      "max": 3765,
+      "inverter": false
+    },
+    "ABS_RY": {
+      "rotulo": "pitch (stick direito, vertical)",
+      "offset": 18,
+      "min": 416,
+      "centro": 2151,
+      "max": 3918,
+      "inverter": false
+    },
+    "ABS_THROTTLE": {
+      "rotulo": "roda do gimbal (dial esquerdo)",
+      "offset": 24,
+      "tipo": "dial",
+      "_nota": "dial nao tem retorno por mola: mapeamento linear min->max, sem zona morta. Rode --calibrar girando a roda de ponta a ponta.",
+      "min": 246,
+      "centro": 2067,
+      "max": 3875,
+      "inverter": false
+    }
+  },
+  "chaves": {
+    "_comentario": "byte 28: dois campos de 2 bits. Levantado com calibrar_chaves.py; as 5 leituras sao consistentes. 'codigos' mapeia o valor do campo de 2 bits para o nome da posicao.",
+    "offset": 28,
+    "S1": {
+      "rotulo": "S1 (modo de voo)",
+      "deslocamento_bits": 4,
+      "eixo": "ABS_RUDDER",
+      "codigos": {
+        "1": "P",
+        "0": "A",
+        "2": "F"
+      },
+      "ordem": [
+        "P",
+        "A",
+        "F"
+      ],
+      "botoes": {
+        "P": "BTN_TRIGGER",
+        "A": "BTN_THUMB",
+        "F": "BTN_THUMB2"
+      }
+    },
+    "S2": {
+      "rotulo": "S2 (return to home)",
+      "deslocamento_bits": 6,
+      "eixo": "ABS_WHEEL",
+      "codigos": {
+        "1": "cima",
+        "0": "meio",
+        "2": "baixo"
+      },
+      "ordem": [
+        "cima",
+        "meio",
+        "baixo"
+      ],
+      "botoes": {
+        "cima": "BTN_TOP",
+        "meio": "BTN_TOP2",
+        "baixo": "BTN_PINKIE"
+      }
+    }
+  }
+}
